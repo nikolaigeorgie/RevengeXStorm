@@ -1,0 +1,6 @@
+framework module Pods_RevengeXStormUITests {
+  umbrella header "Pods-RevengeXStormUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

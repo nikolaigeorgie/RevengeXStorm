@@ -1,0 +1,6 @@
+framework module Pods_RevengeXStorm {
+  umbrella header "Pods-RevengeXStorm-umbrella.h"
+
+  export *
+  module * { export * }
+}
