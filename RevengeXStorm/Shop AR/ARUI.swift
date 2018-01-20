@@ -9,6 +9,8 @@
 import UIKit
 import ColorSlider
 
+
+
 extension ViewController {
     
     
@@ -65,9 +67,9 @@ extension ViewController {
         var characterToLoad = characterObject.first
         
         
-        virtualObjectLoader.loadVirtualObject(characterToLoad!, loadedHandler: { [unowned self] loadedObject in
+        virtualObjectLoader.loadVirtualObject(characterToLoad!, loadedHandler: { [weak self] loadedObject in
             DispatchQueue.main.async {
-                self.placeCharacter(loadedObject)
+                 self?.placeCharacter(loadedObject)
             }
         })
         
@@ -293,17 +295,40 @@ extension ViewController {
         
         
         view.addSubview(backButton)
-        backButton.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 40, bottomConstant: 25, rightConstant: 0, widthConstant: 50, heightConstant: 50)
-        
         view.addSubview(resetButton)
-        resetButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 65, leftConstant: 0, bottomConstant: 0, rightConstant: 45, widthConstant: 30, heightConstant: 25)
+        sceneView.addSubview(switchCharacterButton)
+
         
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+        // It's an iPhone
+            backButton.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 40, bottomConstant: 25, rightConstant: 0, widthConstant: 50, heightConstant: 50)
+            resetButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 65, leftConstant: 0, bottomConstant: 0, rightConstant: 45, widthConstant: 30, heightConstant: 25)
+                    switchCharacterButton.anchor(nil, left: nil, bottom: sceneView.bottomAnchor, right: sceneView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 30, rightConstant: 45, widthConstant: 43, heightConstant: 40)
+            
+        case .pad:
+            backButton.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 140, bottomConstant: 95, rightConstant: 0, widthConstant: 50, heightConstant: 50)
+            resetButton.anchor(view.topAnchor, left: nil, bottom: nil, right: view.rightAnchor, topConstant: 135, leftConstant: 0, bottomConstant: 0, rightConstant: 145, widthConstant: 30, heightConstant: 25)
+                    switchCharacterButton.anchor(nil, left: nil, bottom: sceneView.bottomAnchor, right: sceneView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 100, rightConstant: 145, widthConstant: 43, heightConstant: 40)
+            
+            
+        // It's an iPad
+        case .unspecified:
+            break
+            // Uh, oh! What could it be?
+        case .tv:
+            break
+        case .carPlay:
+            break
+        }
+        
+
+       
         carCollectionView.register(CarCell.self, forCellWithReuseIdentifier: carCellId)
         carCollectionView.delegate = self
         carCollectionView.dataSource = self
         
-        sceneView.addSubview(switchCharacterButton)
-        switchCharacterButton.anchor(nil, left: nil, bottom: sceneView.bottomAnchor, right: sceneView.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 30, rightConstant: 45, widthConstant: 43, heightConstant: 40)
+ 
         
         
         

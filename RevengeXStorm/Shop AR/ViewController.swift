@@ -20,6 +20,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     static var bodyColor = UIColor.black
     static var boltColor = UIColor.white
     static var bodyImage = UIImage()
+    static var boltImage = UIImage()
     
     static var residueSystem = SCNParticleSystem(named: "SmokeResidue", inDirectory: "")
     
@@ -408,7 +409,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         sceneView.delegate = self
         sceneView.session.delegate = self
-        sceneView.debugOptions = ARSCNDebugOptions.showFeaturePoints
+            self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
         
         // Set up scene content.
@@ -427,8 +428,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
         
         // Hook up status view controller callback(s).
-        statusViewController.restartExperienceHandler = { [unowned self] in
-            self.restartExperience()
+        statusViewController.restartExperienceHandler = { [weak self] in
+            self?.restartExperience()
         }
         
         //        setupBottomBar()
@@ -496,14 +497,19 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 self.carCollectionView.isHidden = true
             })
         } else {
-            virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
+            virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [weak self] loadedObject in
                 DispatchQueue.main.async {
                     
                     UIView.animate(withDuration: 0.5, animations: {
-                        self.carCollectionView.alpha = 0
+                        guard let carCollection = self?.carCollectionView else { return }
+                        carCollection.alpha = 0
+//                        self.carCollectionView.alpha = 0
                     }, completion: { (done) in
-                        self.carCollectionView.isHidden = true
-                        self.placeVirtualObject(loadedObject)
+                        guard let carCollection = self?.carCollectionView else { return }
+                        guard let pvo = self?.placeVirtualObject else { return }
+
+                        carCollection.isHidden = true
+                        pvo(loadedObject)
                         
                     })
                 }

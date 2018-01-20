@@ -89,6 +89,11 @@ extension ViewController {
                 self.rightShoeNode?.geometry?.material(named: "body")?.diffuse.contents = ViewController.bodyImage
             }
             
+            if ViewController.boltImage != UIImage() {
+                self.leftShoeNode?.geometry?.material(named: "lightningBolt")?.diffuse.contents = ViewController.boltImage
+                self.rightShoeNode?.geometry?.material(named: "lightningBolt")?.diffuse.contents = ViewController.boltImage
+            }
+            
             
             //getting the animation node... here we go
             let metaRigNode = self.sceneView.scene.rootNode.childNode(withName: "metarig", recursively: true)

@@ -39,13 +39,14 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
             }, completion: { (finished) in
                 self.animationView.isHidden = true
                 self.scanEnvironmentLabel.isHidden = true
-
+                self.loadCharacters()
             })
             
             self.statusViewController.cancelScheduledMessage(for: .planeEstimation)
             self.statusViewController.showMessage("SURFACE DETECTED")
             if self.virtualObjectLoader.loadedObjects.isEmpty {
                 self.statusViewController.scheduleMessage("SELECT A CHARACTER", inSeconds: 7.5, messageType: .contentPlacement)
+                self.sceneView.debugOptions = []
             }
         }
         updateQueue.async {

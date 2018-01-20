@@ -15,11 +15,32 @@ extension ModelController {
     func setupColorPicker() {
         /* Calculate relative size and origin in bounds */
         
-        let pickerSize = CGSize(width: 190, height: 190)
+        print("here is the width", self.view.frame.width)
+        
+               var pickerSize = CGSize()
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            // It's an iPhone
+         pickerSize = CGSize(width: view.frame.width / 1.5, height: view.frame.width / 1.5)
+            
+        case .pad:
+     pickerSize = CGSize(width: view.frame.width / 2, height: view.frame.width / 2)
+            
+        // It's an iPad
+        case .unspecified:
+            break
+        // Uh, oh! What could it be?
+        case .tv:
+            break
+        case .carPlay:
+            break
+        }
         
         
         
-        let pickerOrigin = CGPoint(x: view.bounds.midX - pickerSize.width/2, y: view.bounds.maxY - pickerSize.width / 0.8)
+        
+        let pickerOrigin = CGPoint(x: view.bounds.midX - pickerSize.width/2, y: view.bounds.maxY - pickerSize.width / 0.95)
         
         /* Create Color Picker */
         colorPicker = ChromaColorPicker(frame: CGRect(origin: pickerOrigin, size: pickerSize))
@@ -136,6 +157,7 @@ extension ModelController {
         ViewController.bodyColor = UIColor.black
         bodyButton.backgroundColor = UIColor.black
         ViewController.bodyImage = UIImage()
+        ViewController.boltImage = UIImage()
         
         setupColorPicker()
         
@@ -159,6 +181,7 @@ extension ModelController: ChromaColorPickerDelegate {
         if selectedItem == "light" {
             shoeNode?.geometry?.material(named: "lightingBolt")?.diffuse.contents = color
             ViewController.boltColor = color
+            ViewController.boltImage = UIImage()
         } else {
             shoeNode?.geometry?.material(named: "Body")?.diffuse.contents = color
             ViewController.bodyColor = color
@@ -169,8 +192,15 @@ extension ModelController: ChromaColorPickerDelegate {
     }
     
     func colorPickerDidChooseColor(_ colorPicker: ChromaColorPicker, color: UIColor) {
-//        presentPicker()
-        checkIfPurchased()
+        
+        texturesPurchase = UserDefaults.standard.bool(forKey: "TexturesPurchase")
+        
+        if texturesPurchase == true {
+            presentPicker()
+        } else {
+            checkIfPurchased()
+        }
+    
     }
     
     

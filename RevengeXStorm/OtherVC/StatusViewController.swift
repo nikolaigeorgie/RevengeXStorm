@@ -101,15 +101,15 @@ class StatusViewController: UIViewController {
     func escalateFeedback(for trackingState: ARCamera.TrackingState, inSeconds seconds: TimeInterval) {
         cancelScheduledMessage(for: .trackingStateEscalation)
         
-        let timer = Timer.scheduledTimer(withTimeInterval: seconds, repeats: false, block: { [unowned self] _ in
-            self.cancelScheduledMessage(for: .trackingStateEscalation)
+        let timer = Timer.scheduledTimer(withTimeInterval: seconds, repeats: false, block: { [weak self] _ in
+            self?.cancelScheduledMessage(for: .trackingStateEscalation)
             
             var message = trackingState.presentationString
             if let recommendation = trackingState.recommendation {
                 message.append(": \(recommendation)")
             }
             
-            self.showMessage(message, autoHide: false)
+            self?.showMessage(message, autoHide: false)
         })
         
         timers[.trackingStateEscalation] = timer

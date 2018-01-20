@@ -75,7 +75,9 @@ import FirebaseAnalytics
             switch result {
             case .success(let purchase):
                 print("Purchase Success: \(purchase.productId)")
+                UserDefaults.standard.set(true, forKey: "TexturesPurchase")
                 return alertWithTitle("Thank You", message: "Purchase completed")
+                //Here
             case .error(let error):
                 print("Purchase Failed: \(error)")
                 switch error.code {
@@ -107,6 +109,7 @@ import FirebaseAnalytics
                 return alertWithTitle("Restore failed", message: "Unknown error. Please contact support")
             } else if results.restoredPurchases.count > 0 {
                 print("Restore Success: \(results.restoredPurchases)")
+                UserDefaults.standard.set(true, forKey: "TexturesPurchase")
                 return alertWithTitle("Purchases Restored", message: "All purchases have been restored")
             } else {
                 print("Nothing to Restore")
@@ -153,6 +156,7 @@ import FirebaseAnalytics
             switch result {
             case .purchased:
                 print("Product is purchased")
+                        UserDefaults.standard.set(true, forKey: "TexturesPurchase")
                 return alertWithTitle("Product is purchased", message: "Product will not expire")
             case .notPurchased:
                 print("This product has never been purchased")

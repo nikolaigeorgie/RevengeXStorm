@@ -18,6 +18,7 @@ import SwiftyStoreKit
 import ChromaColorPicker
 import AudioToolbox
 import FirebaseAnalytics
+import ARKit
 
 class ModelController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -60,28 +61,7 @@ class ModelController: UIViewController, UIImagePickerControllerDelegate, UINavi
         return button
     }()
     
-    let selectShoeTextureButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("Choose an Image", for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.white, for: .normal)
-        button.addTarget(self, action: #selector(handleTextureLoad), for: .touchUpInside)
-        return button
-    }()
-    
     var texturesPurchase = false
-    
-    @objc func handleTextureLoad() {
-        // check if is purchased or not.. the feature...
-        
-        texturesPurchase = UserDefaults.standard.bool(forKey: "TexturesPurchase")
-        
-        if texturesPurchase == true {
-            presentPicker()
-        } else {
-            checkIfPurchased()
-        }
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -121,12 +101,16 @@ class ModelController: UIViewController, UIImagePickerControllerDelegate, UINavi
             selectedImageFromPicker = originalImage
         }
         
-        if let selectedImage = selectedImageFromPicker {
-            //            uploadToFirebaseStorageUsingImage(selectedImage, completion: { (imageUrl) in
-            //                self.sendMessageWithImageUrl(imageUrl, image: selectedImage)
-            //            })
-            ViewController.bodyImage = selectedImage
-            shoeNode?.geometry?.material(named: "Body")?.diffuse.contents = selectedImage
+        if let selectedImage = selectedImageFromPicker {            
+            if selectedItem == "light" {
+                shoeNode?.geometry?.material(named: "lightingBolt")?.diffuse.contents = selectedImage
+                ViewController.boltImage = selectedImage
+            
+            } else {
+                ViewController.bodyImage = selectedImage
+                shoeNode?.geometry?.material(named: "Body")?.diffuse.contents = selectedImage
+                
+            }
             
         }
     }
@@ -173,23 +157,42 @@ class ModelController: UIViewController, UIImagePickerControllerDelegate, UINavi
  
     
     @objc func presentModelViewController() {
+        if ARConfiguration.isSupported == false {
+            let alertController = UIAlertController(title: "AR NOT SUPPORTED", message: "Your phone does not support AR functionality", preferredStyle: .alert)
+            self.present(alertController, animated: true, completion: nil)
+            alertController.addAction(UIAlertAction(title: "Fasho", style: .default, handler: { (_) in
+                self.dismiss(animated: true, completion: nil)
+            }))
+            
+        } else {
+
         let arController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ViewController") as! ViewController
         self.present(arController, animated: true, completion: nil)
-        
+        }
     }
+    
+    var isAnimating = false
     
     @objc func handleBodySelection() {
         
-                generator.impactOccurred()
+        generator.impactOccurred()
+        
+        if isAnimating == true {
+            return
+        }
         
         if selectedItem == "" {
             selectedItem = "body"
+                self.isAnimating = true
             
             UIView.animate(withDuration: 0.4, animations: {
                 self.doneButton.alpha = 0
+                
             }, completion: { (completed) in
                 UIView.animate(withDuration: 0.4, animations: {
                     self.colorPicker.alpha = 1
+                }, completion: {(completed) in
+                       self.isAnimating = false
                 })
             })
             
@@ -198,11 +201,15 @@ class ModelController: UIViewController, UIImagePickerControllerDelegate, UINavi
             
         } else if selectedItem == "body" {
             selectedItem = ""
+             self.isAnimating = true
             UIView.animate(withDuration: 0.4, animations: {
                 self.colorPicker.alpha = 0
+                
             }, completion: { (completed) in
                 UIView.animate(withDuration: 0.4, animations: {
                     self.doneButton.alpha = 1
+                }, completion: {(completed) in
+                    self.isAnimating = false
                 })
             })
             
