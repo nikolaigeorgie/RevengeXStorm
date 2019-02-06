@@ -138,20 +138,11 @@ extension ViewController {
             
             
             personNode.opacity = 0
-            
+
             SCNTransaction.begin()
             personNode.opacity = 1
             SCNTransaction.animationDuration = 2
             SCNTransaction.commit()
-            
-            
-            //            let particleSystem = SCNParticleSystem(named: "Smoke", inDirectory: "")
-            //                        let particle = SCNParticleSystem(named: "Smoke", inDirectory: "")
-            //            self.leftShoeNode?.addParticleSystem(particleSystem!)
-            
-            
-        
-            //            self.sceneView.scene.rootNode.addChildNode(self.cigNode!)
             
         }
     }
@@ -182,7 +173,7 @@ extension ViewController {
     func setupLoop(residueNode: SCNNode, smokeNode: SCNNode) {
         let when = DispatchTime.now() + 10 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
-            print("go smoke ")
+            // Perfom smoke animation
             self.waitABit(residueNode: residueNode, smokeNode: smokeNode)
         }
     }

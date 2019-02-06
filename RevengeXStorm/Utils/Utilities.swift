@@ -1,9 +1,10 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-Utility functions and type extensions used throughout the projects.
-*/
+//
+//  ModelController.swift
+//  RevengeXStorm
+//
+//  Created by Nikolas Andryuschenko on 11/7/17.
+//  Copyright © 2017 Nikolas Andryuschenko. All rights reserved.
+//
 
 import Foundation
 import ARKit

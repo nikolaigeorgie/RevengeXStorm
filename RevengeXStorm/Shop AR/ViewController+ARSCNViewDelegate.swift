@@ -55,17 +55,6 @@ extension ViewController: ARSCNViewDelegate, ARSessionDelegate {
             }
         }
         
-        // Create a SceneKit plane to visualize the node using its position and extent.
-        //        let plane = SCNPlane(width: CGFloat(planeAnchor.extent.x), height: CGFloat(planeAnchor.extent.z))
-        //        let planeNode = SCNNode(geometry: plane)
-        //        planeNode.position = SCNVector3Make(planeAnchor.center.x, 0, planeAnchor.center.z)
-        //        planeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.red
-        //        // SCNPlanes are vertically oriented in their local coordinate space.
-        //        // Rotate it to match the horizontal orientation of the ARPlaneAnchor.
-        //        planeNode.transform = SCNMatrix4MakeRotation(-Float.pi / 2, 1, 0, 0)
-        //
-        //        // ARKit owns the node corresponding to the anchor, so make the plane a child node.
-        //        node.addChildNode(planeNode)
     }
     
     

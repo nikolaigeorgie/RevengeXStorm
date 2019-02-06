@@ -16,7 +16,7 @@ extension ViewController {
     
     @objc func loadCharacter() {
         
-        if currentPersonLabel.text != "Ian Connor" {
+        if currentPersonLabel.text == "Ariel Pink" {
             return
         }
         
@@ -56,12 +56,12 @@ extension ViewController {
         } else if currentPersonLabel.text == "Ariel Pink" {
             ViewController.selectedModel = "ArielPink"
             characterObject.remove(at: 0)
-            
+
         } else if currentPersonLabel.text == "Lala" {
             ViewController.selectedModel = "Lala"
             characterObject.remove(at: 0)
             characterObject.remove(at: 0)
-        }
+             }
         
         
         var characterToLoad = characterObject.first
@@ -73,18 +73,6 @@ extension ViewController {
             }
         })
         
-        
-        //        let modelScene = SCNScene(named:
-        //            "Models.scnassets/IanTest.dae")!
-        //
-        //        var nodeModel:SCNNode!
-        //        //    let nodeName = "cherub"
-        //        let nodeName = "IanTest"
-        //
-        //        nodeModel =  modelScene.rootNode.childNode(withName: nodeName, recursively: true)
-        //        nodeModel.position = SCNVector3Make(0, 0, 0)
-        //        self.sceneView.scene.rootNode.addChildNode(nodeModel)
-        //
     }
     
     @objc func handleRightButtonHit() {
@@ -120,9 +108,9 @@ extension ViewController {
             }
             
         } else if currentUser == "Ariel Pink" {
-            selectButton.setTitle("COMING SOON", for: .normal)
+            selectButton.setTitle("SELECT", for: .normal)
             currentUser = "Lala"
-            currentPersonLabel.text = "???"
+            currentPersonLabel.text = "Lala"
             ViewController.selectedModel = "Lala"
             IanImageView.isUserInteractionEnabled = false
             ArielImageView.isUserInteractionEnabled = false
@@ -187,8 +175,8 @@ extension ViewController {
     @objc func handleLeftButtonHit() {
         
         if currentUser == "Ian Connor" {
-            selectButton.setTitle("COMING SOON", for: .normal)
-            currentPersonLabel.text = "???"
+            selectButton.setTitle("SELECT", for: .normal)
+            currentPersonLabel.text = "Lala"
             currentUser = "Lala"
             ViewController.selectedModel = "Lala"
             IanImageView.isUserInteractionEnabled = false
@@ -344,7 +332,6 @@ extension ViewController {
         stackView.centerXAnchor.constraint(equalTo: sceneView.centerXAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
         stackView.widthAnchor.constraint(equalToConstant: 270).isActive = true
-        //        stackView.setCustomSpacing(150.0, after: leftArrowButton)
         
         leftArrowButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         selectButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
@@ -354,22 +341,6 @@ extension ViewController {
         
         stackView.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        
-        //        view.addSubview(currentPersonLabel)
-        //        currentPersonLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -50).isActive = true
-        //        currentPersonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        //        currentPersonLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        //        currentPersonLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        //        currentPersonLabel.textAlignment = .center
-        //
-        
-//        view.addSubview(currentPersonLabelImageView)
-//        currentPersonLabelImageView.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -30).isActive = true
-//        currentPersonLabelImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        currentPersonLabelImageView.heightAnchor.constraint(equalToConstant: 13).isActive = true
-//        currentPersonLabelImageView.widthAnchor.constraint(equalToConstant: 150).isActive = true
-
-        
         view.addSubview(currentPersonLabel)
         currentPersonLabel.bottomAnchor.constraint(equalTo: stackView.topAnchor, constant: -30).isActive = true
         currentPersonLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -378,9 +349,9 @@ extension ViewController {
 
         
         
-        IanImageView.sd_setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/cybershop-f4213.appspot.com/o/IanConnor.gif?alt=media&token=a64d415e-225d-46ab-958b-39f08a4e54e9"), placeholderImage: UIImage())
+        IanImageView.sd_setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/revengexs-7792e.appspot.com/o/IanConnor.gif?alt=media&token=4ad40d24-605d-4cdf-9a50-21e9da98a1d7"), placeholderImage: UIImage(named: "Ian.png"))
         
-        ArielImageView.sd_setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/revengexs-7792e.appspot.com/o/mysteryone.gif?alt=media&token=9583616d-ad1c-4275-9606-524b813aea76"), placeholderImage: UIImage())
+        ArielImageView.sd_setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/revengexs-7792e.appspot.com/o/connor.gif?alt=media&token=488f9bbb-4daa-4b28-af66-d91b1bbc842e"), placeholderImage: UIImage())
         
         LalaImageView.sd_setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/revengexs-7792e.appspot.com/o/mysterytwo.gif?alt=media&token=38f9d030-4909-499b-add1-97c68a549e95"), placeholderImage: UIImage())
         

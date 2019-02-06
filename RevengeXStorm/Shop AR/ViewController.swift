@@ -126,8 +126,6 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     let carCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        //        layout.minimumLineSpacing = 200
-        //        layout.minimumInteritemSpacing = 200
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .clear
         cv.isHidden = true

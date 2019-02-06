@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		34BBD8D5E8BE9C49D6BF453E /* Pods_RevengeXStorm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 495863643392978CB4952963 /* Pods_RevengeXStorm.framework */; };
-		651F7D3D2002EA0E00A5D656 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 651F7D3B2002EA0D00A5D656 /* smoke.png */; };
-		651F7D3E2002EA0E00A5D656 /* Residue.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 651F7D3C2002EA0D00A5D656 /* Residue.scnp */; };
+		6513F61C220B94CA00DCDA06 /* Residue.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 6513F61A220B94C900DCDA06 /* Residue.scnp */; };
+		6513F61E220B94D500DCDA06 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 6513F61D220B94D400DCDA06 /* smoke.png */; };
 		651F7D402002EC1700A5D656 /* SmokeResidue.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 651F7D3F2002EC1700A5D656 /* SmokeResidue.scnp */; };
 		653B5E0A1FD09DBA00207AD1 /* NetworkActivityIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B5E091FD09DBA00207AD1 /* NetworkActivityIndicatorManager.swift */; };
 		653B5E0C1FD218B800207AD1 /* ModelUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653B5E0B1FD218B800207AD1 /* ModelUI.swift */; };
@@ -22,7 +22,6 @@
 		655789051FCF548100E48411 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655789041FCF548100E48411 /* StoreKit.framework */; };
 		657873571FCA810600B9440C /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657873561FCA810600B9440C /* Products.swift */; };
 		657873591FCA819500B9440C /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657873581FCA819500B9440C /* IAPHelper.swift */; };
-		65A988401FE9C86C00020122 /* SmokeParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = 65A9883F1FE9C86C00020122 /* SmokeParticle.sks */; };
 		65B97EE21FB280BF0057E8E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B97EE11FB280BF0057E8E2 /* AppDelegate.swift */; };
 		65B97EE41FB280BF0057E8E2 /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B97EE31FB280BF0057E8E2 /* Models.scnassets */; };
 		65B97EE91FB280BF0057E8E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B97EE71FB280BF0057E8E2 /* Main.storyboard */; };
@@ -56,7 +55,6 @@
 		65B97F851FB28F170057E8E2 /* ModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B97F841FB28F170057E8E2 /* ModelController.swift */; };
 		65B97F871FB290B20057E8E2 /* Shoes.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 65B97F861FB290B20057E8E2 /* Shoes.scnassets */; };
 		65CC0C321FE9CD5C005A3720 /* Smoke.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 65CC0C301FE9CD30005A3720 /* Smoke.scnp */; };
-		65CC0C331FE9D71C005A3720 /* smoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 65CC0C311FE9CD32005A3720 /* smoke.png */; };
 		65D3FD281FD38696003E111C /* HandelingAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D3FD271FD38696003E111C /* HandelingAnimations.swift */; };
 		91657B621FEDF50C003DAA96 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 91657B611FEDF50C003DAA96 /* GoogleService-Info.plist */; };
 		BB0848400892F77A3BFD822F /* Pods_RevengeXStormTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35341DAE1ABCFCB3D333177B /* Pods_RevengeXStormTests.framework */; };
@@ -84,8 +82,8 @@
 		35341DAE1ABCFCB3D333177B /* Pods_RevengeXStormTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevengeXStormTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		456D441B122BDED5E00B6549 /* Pods-RevengeXStormTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevengeXStormTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevengeXStormTests/Pods-RevengeXStormTests.debug.xcconfig"; sourceTree = "<group>"; };
 		495863643392978CB4952963 /* Pods_RevengeXStorm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RevengeXStorm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		651F7D3B2002EA0D00A5D656 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = SOURCE_ROOT; };
-		651F7D3C2002EA0D00A5D656 /* Residue.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Residue.scnp; sourceTree = "<group>"; };
+		6513F61A220B94C900DCDA06 /* Residue.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Residue.scnp; sourceTree = "<group>"; };
+		6513F61D220B94D400DCDA06 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = smoke.png; path = ../../../../.Trash/smoke.png; sourceTree = "<group>"; };
 		651F7D3F2002EC1700A5D656 /* SmokeResidue.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = SmokeResidue.scnp; sourceTree = "<group>"; };
 		653B5E091FD09DBA00207AD1 /* NetworkActivityIndicatorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityIndicatorManager.swift; sourceTree = "<group>"; };
 		653B5E0B1FD218B800207AD1 /* ModelUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUI.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 		655789041FCF548100E48411 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		657873561FCA810600B9440C /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		657873581FCA819500B9440C /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
-		65A9883F1FE9C86C00020122 /* SmokeParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeParticle.sks; sourceTree = "<group>"; };
 		65B97EDE1FB280BF0057E8E2 /* RevengeXStorm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RevengeXStorm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65B97EE11FB280BF0057E8E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65B97EE31FB280BF0057E8E2 /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
@@ -138,7 +135,6 @@
 		65B97F841FB28F170057E8E2 /* ModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelController.swift; sourceTree = "<group>"; };
 		65B97F861FB290B20057E8E2 /* Shoes.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Shoes.scnassets; sourceTree = "<group>"; };
 		65CC0C301FE9CD30005A3720 /* Smoke.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = Smoke.scnp; sourceTree = "<group>"; };
-		65CC0C311FE9CD32005A3720 /* smoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smoke.png; sourceTree = "<group>"; };
 		65D3FD271FD38696003E111C /* HandelingAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandelingAnimations.swift; sourceTree = "<group>"; };
 		6B213F2BE54B7708D5503849 /* Pods-RevengeXStormTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevengeXStormTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RevengeXStormTests/Pods-RevengeXStormTests.release.xcconfig"; sourceTree = "<group>"; };
 		6C3666375B59E10B37417AB7 /* Pods-RevengeXStormUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RevengeXStormUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RevengeXStormUITests/Pods-RevengeXStormUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -217,8 +213,8 @@
 		65B97EE01FB280BF0057E8E2 /* RevengeXStorm */ = {
 			isa = PBXGroup;
 			children = (
-				651F7D3B2002EA0D00A5D656 /* smoke.png */,
-				651F7D3C2002EA0D00A5D656 /* Residue.scnp */,
+				6513F61D220B94D400DCDA06 /* smoke.png */,
+				6513F61A220B94C900DCDA06 /* Residue.scnp */,
 				91657B631FEDF61F003DAA96 /* RevengeXStorm.entitlements */,
 				91657B611FEDF50C003DAA96 /* GoogleService-Info.plist */,
 				6540C7781FEB8D0F00C15911 /* ARDEMO.json */,
@@ -240,8 +236,6 @@
 				65B97EEF1FB280BF0057E8E2 /* Info.plist */,
 				65B97F861FB290B20057E8E2 /* Shoes.scnassets */,
 				65CC0C301FE9CD30005A3720 /* Smoke.scnp */,
-				65CC0C311FE9CD32005A3720 /* smoke.png */,
-				65A9883F1FE9C86C00020122 /* SmokeParticle.sks */,
 				651F7D3F2002EC1700A5D656 /* SmokeResidue.scnp */,
 			);
 			path = RevengeXStorm;
@@ -497,19 +491,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				91657B621FEDF50C003DAA96 /* GoogleService-Info.plist in Resources */,
-				65CC0C331FE9D71C005A3720 /* smoke.png in Resources */,
 				65CC0C321FE9CD5C005A3720 /* Smoke.scnp in Resources */,
 				651F7D402002EC1700A5D656 /* SmokeResidue.scnp in Resources */,
 				655294F21FC3A2DD00D31665 /* gaposiss.ttf in Resources */,
 				65B97F871FB290B20057E8E2 /* Shoes.scnassets in Resources */,
 				65B97EE41FB280BF0057E8E2 /* Models.scnassets in Resources */,
-				651F7D3E2002EA0E00A5D656 /* Residue.scnp in Resources */,
 				65B97EEE1FB280BF0057E8E2 /* LaunchScreen.storyboard in Resources */,
 				6540C7791FEB8D0F00C15911 /* ARDEMO.json in Resources */,
-				651F7D3D2002EA0E00A5D656 /* smoke.png in Resources */,
+				6513F61E220B94D500DCDA06 /* smoke.png in Resources */,
 				65B97EEB1FB280BF0057E8E2 /* Assets.xcassets in Resources */,
-				65A988401FE9C86C00020122 /* SmokeParticle.sks in Resources */,
 				65B97EE91FB280BF0057E8E2 /* Main.storyboard in Resources */,
+				6513F61C220B94CA00DCDA06 /* Residue.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,6 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RevengeXStorm/RevengeXStorm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8SEL6VZYW;
 				INFOPLIST_FILE = RevengeXStorm/Info.plist;
@@ -908,6 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Andryuschenko.RevengeXStorm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -919,6 +913,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = RevengeXStorm/RevengeXStorm.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A8SEL6VZYW;
 				INFOPLIST_FILE = RevengeXStorm/Info.plist;
@@ -926,6 +921,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Andryuschenko.RevengeXStorm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

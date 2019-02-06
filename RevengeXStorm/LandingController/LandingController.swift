@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  MyCarByWestCoastCustoms
+//  ModelController.swift
+//  RevengeXStorm
 //
 //  Created by Nikolas Andryuschenko on 10/4/17.
 //  Copyright © 2017 Nikolas Andryuschenko. All rights reserved.

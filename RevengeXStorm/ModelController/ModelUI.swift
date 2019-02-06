@@ -16,8 +16,7 @@ extension ModelController {
         /* Calculate relative size and origin in bounds */
         
         print("here is the width", self.view.frame.width)
-        
-               var pickerSize = CGSize()
+        var pickerSize = CGSize()
         
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:
@@ -37,6 +36,8 @@ extension ModelController {
             break
         }
         
+        
+        3333
         
         
         

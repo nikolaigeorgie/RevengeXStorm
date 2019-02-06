@@ -11,14 +11,6 @@ import ARKit
 
 class VirtualObject: SCNReferenceNode {
     
-    
-    static let testIan: VirtualObject = {
-        
-        let modelsURL = Bundle.main.url(forResource: "Models.scnassets/IanConnor/IanConnor.dae", withExtension: nil)!
-        return VirtualObject(url: modelsURL)!
-    }()
-    
-    
     static let IanLoader: VirtualObject = {
         
         let modelsURL = Bundle.main.url(forResource: "Models.scnassets/IanConnor/IanConnor.dae", withExtension: nil)!
@@ -33,7 +25,7 @@ class VirtualObject: SCNReferenceNode {
     
     static let LalaLoader: VirtualObject = {
         
-        let modelsURL = Bundle.main.url(forResource: "Models.scnassets/IanConnor/IanConnor.dae", withExtension: nil)!
+        let modelsURL = Bundle.main.url(forResource: "Models.scnassets/Lala/Lala.dae", withExtension: nil)!
         return VirtualObject(url: modelsURL)!
     }()
     

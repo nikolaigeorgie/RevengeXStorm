@@ -21,8 +21,27 @@ import FirebaseAnalytics
                     print("Product: \(product.localizedDescription), price: \(priceString)")
                     
                     if self.texturesPurchase == false {
+                        var alertController = UIAlertController(title: "Custom Texture Purchase", message: "Purchase texture manipulation for $0.99?", preferredStyle: .alert)
                         
-                        let alertController = UIAlertController(title: "Custom Texture Purchase", message: "Purchase texture manipulation for $0.99?", preferredStyle: .actionSheet)
+                        switch UIDevice.current.userInterfaceIdiom {
+                        case .phone:
+                            // It's an iPhone
+                            alertController = UIAlertController(title: "Custom Texture Purchase", message: "Purchase texture manipulation for $0.99?", preferredStyle: .actionSheet)
+                            
+                        case .pad:
+                            alertController = UIAlertController(title: "Custom Texture Purchase", message: "Purchase texture manipulation for $0.99?", preferredStyle: .alert)
+                            
+                        // It's an iPad
+                        case .unspecified:
+                            break
+                        // Uh, oh! What could it be?
+                        case .tv:
+                            break
+                        case .carPlay:
+                            break
+                        }
+                        
+
                         self.present(alertController, animated: true, completion: nil)
                         alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
                             NetworkActivityIndicatorManager.networkOperationStarted()
